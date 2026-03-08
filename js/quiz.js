@@ -67,6 +67,61 @@ const questions = [
       'D) Сары'
     ],
     correctIndex: 2
+  },
+  {
+    id: 6,
+    question: '6) Айбектын любимый анимесы?:',
+    options: [
+      'A)Ван Пис',
+      'B)Наруто',
+      'C)Клинок рассекающий демонов',
+      'D)Атака Титанов'
+    ],
+    correctIndex: 0
+  },
+  {
+    id: 7,
+    question: '7)Аминанын краштары?',
+    options: [
+      'A)Перасыл',
+      'B)Саян',
+      'C)Ырысбек',
+      'D) Барлық жауап дұрыс'
+    ],
+    correctIndex: 3
+  },
+  {
+    id: 8,
+    question: '8) Теміртау оқиғасы қай жылы болды?',
+    options: [
+      'A)1969',
+      'B)1959',
+      'C)1999',
+      'D)1989'
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: '9)Гүлмерейды басқаша қалай атаймыз?',
+    options: [
+      'A)глмр',
+      'B)Демагоргон',
+      'C)Сельдерей',
+      'D) Барлық жауап дұрыс'
+    ],
+    correctIndex: 3
+  },
+  {
+    id: 10,
+    question: '10)Сабын не үшін керек?',
+    options: [
+      'A)Қол жуу үшін ',
+      'B) Дәулет үшін',
+      'C)Аяқ жуу үшін ',
+      'D)Кір жуу үшін'
+    ],
+    correctIndex: 1
   }
 ];
 
@@ -91,6 +146,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const currentQuestion = questions.find(x => x.id === qIndex) || questions[0];
   // Fill progress
   currentEl.textContent = currentQuestion.id;
+  // Set total count dynamically
+  const totalEl = document.getElementById('total');
+  if (totalEl) totalEl.textContent = String(questions.length);
 
   // Render question
   questionEl.textContent = currentQuestion.question;

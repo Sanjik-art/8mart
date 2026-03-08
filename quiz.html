@@ -8,9 +8,9 @@
 </head>
 <body class="page page-quiz">
   <main class="container" role="main">
-    <div class="quiz-card" id="quiz" aria-live="polite">
-      <!-- Content will be rendered by js/quiz.js -->
-      <div id="progress" class="progress">Сұрақ <span id="current">1</span> / 5</div>
+  <div class="quiz-card" id="quiz" aria-live="polite">
+  <!-- Content will be rendered by js/quiz.js -->
+  <div id="progress" class="progress">Сұрақ <span id="current">1</span> / <span id="total">5</span></div>
       <h2 id="question" class="question"></h2>
       <div id="options" class="options" role="list"></div>
     </div>
@@ -19,7 +19,7 @@
   <!-- Rating overlay shown after last question -->
   <div id="ratingOverlay" class="rating-overlay" hidden aria-hidden="true">
     <div class="rating-card" role="dialog" aria-modal="true" aria-labelledby="ratingTitle">
-      <h3 id="ratingTitle">Сізге соңғы сұрақ пен жалпы квиз ұнадыма?</h3>
+      <h3 id="ratingTitle">Сізге жалпы квиз ұнадыма?</h3>
       <p>Бағалаңыз:</p>
       <div class="rating-actions" id="ratingActions">
         <button id="goodBtn" class="btn btn-primary" type="button">Күшті</button>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Квиз — 11"Ә" қыздары</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page page-quiz">
+  <main class="container" role="main">
+    <div class="quiz-card" id="quiz" aria-live="polite">
+      <!-- Content will be rendered by js/quiz.js -->
+      <div id="progress" class="progress">Сұрақ <span id="current">1</span> / 5</div>
+      <h2 id="question" class="question"></h2>
+      <div id="options" class="options" role="list"></div>
+    </div>
+  </main>
+
+  <!-- Rating overlay shown after last question -->
+  <div id="ratingOverlay" class="rating-overlay" hidden aria-hidden="true">
+    <div class="rating-card" role="dialog" aria-modal="true" aria-labelledby="ratingTitle">
+      <h3 id="ratingTitle">Сізге соңғы сұрақ пен жалпы квиз ұнадыма?</h3>
+      <p>Бағалаңыз:</p>
+      <div class="rating-actions" id="ratingActions">
+        <button id="goodBtn" class="btn btn-primary" type="button">Күшті</button>
+        <button id="badBtn" class="btn btn-avoid" type="button">Ужас</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* Mobile-first festive styles: soft pastels, floral accents */
+:root{
+  --bg:#fff7fb;
+  --card:#fff;
+  --accent:#f7c6d9; /* soft pink */
+  --accent-2:#e8d7ff; /* lavender */
+  --accent-3:#fbe7c6; /* light gold */
+  --text:#2b2b2b;
+  --muted:#6a6a6a;
+  --success:#c8f7dc;
+  --danger:#ffd6d6;
+}
+/* Ensure the HTML `hidden` attribute hides elements even if CSS sets display */
+[hidden]{display:none !important}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--bg)}
+.container{max-width:720px;margin:0 auto;padding:1rem}
+
+/* Decorative floral background using SVG data URI */
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-1;opacity:0.85;
+  background-image:radial-gradient(circle at 10% 10%, rgba(255,240,245,0.6), transparent 15%), radial-gradient(circle at 90% 90%, rgba(240,240,255,0.6), transparent 18%), linear-gradient(120deg, rgba(255,250,245,0.5), rgba(255,245,255,0.3));
+}
+
+.hero{padding:2.4rem 1rem 1rem;text-align:center}
+.title{font-size:1.8rem;margin:0;color:#6b254a;letter-spacing:0.02em}
+.subtitle{margin:0.5rem 0 1rem;color:var(--muted)}
+.lead{margin:0 0 1rem;color:var(--muted)}
+
+.btn{display:inline-block;padding:0.85rem 1rem;border-radius:10px;border:0;text-decoration:none;text-align:center;font-weight:600;cursor:pointer}
+.btn:focus{outline:3px solid rgba(107,37,74,0.15);outline-offset:3px}
+.btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#3b0a2f;box-shadow:0 6px 18px rgba(107,37,74,0.08)}
+.btn-start{font-size:1.05rem;padding:1rem 1.25rem;border-radius:14px}
+
+.quiz-card{background:var(--card);border-radius:14px;padding:1rem;margin-top:0.5rem;box-shadow:0 6px 22px rgba(107,37,74,0.06)}
+.progress{font-size:0.9rem;color:var(--muted);margin-bottom:0.5rem}
+.question{font-size:1.1rem;margin:0.5rem 0 1rem}
+.options{display:grid;grid-template-columns:1fr;gap:0.6rem}
+.option-btn{background:linear-gradient(180deg,#fff,#fff);border:2px solid rgba(107,37,74,0.06);padding:0.85rem;border-radius:10px;text-align:left;font-size:1rem}
+.option-btn:focus{outline:3px solid rgba(232,215,255,0.5);outline-offset:2px}
+.option-btn.correct{border-color:seagreen;background:var(--success)}
+.option-btn.wrong{border-color:indianred;background:var(--danger)}
+
+.rating-overlay{position:fixed;inset:0;background:linear-gradient(180deg,rgba(255,250,251,0.95),rgba(255,255,255,0.95));display:flex;align-items:center;justify-content:center;padding:1rem}
+.rating-card{max-width:520px;width:100%;background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:0 12px 40px rgba(107,37,74,0.08);text-align:center}
+.rating-actions{display:flex;gap:0.8rem;justify-content:center;margin-top:0.75rem}
+.btn-avoid{background:linear-gradient(180deg,#ffecec,#ffd6d6);position:relative}
+
+.error-card{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center}
+.error-text{font-size:2.2rem;color:#8b213e;margin:0}
+.error-note{color:var(--muted);margin:0.75rem 0}
+
+/* Larger screens */
+@media(min-width:720px){
+  .container{padding:2rem}
+  .title{font-size:2.4rem}
+  .question{font-size:1.25rem}
+  .options{grid-template-columns:1fr 1fr}
+}
+
+/* subtle success animation */
+.flash-success{animation:flashUp 520ms ease-in-out}
+@keyframes flashUp{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+
+/* make option buttons large and tappable */
+.option-btn{min-height:48px}

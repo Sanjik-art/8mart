@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Қате — Квиз</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page page-error">
+  <main class="container" role="main">
+    <section class="error-card">
+      <h1 class="error-text">ҚАТЕЕЕЕЕ</h1>
+      <p class="error-note">Сәттілік! Қайтадан көріңіз.</p>
+      <div class="error-actions">
+        <!-- Back button: href will include ?q=... so we return to the same question -->
+        <a id="backBtn" class="btn btn-primary" href="#">Вернуться назад к вопросу</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Read ?q= param and set back button link
+    (function(){
+      function param(name) {
+        const url = new URL(location.href);
+        return url.searchParams.get(name);
+      }
+      const q = param('q') || '1';
+      const back = document.getElementById('backBtn');
+      // Use quiz.html?q=<q> to return user to same question
+      back.setAttribute('href', 'quiz.html?q=' + encodeURIComponent(q));
+    })();
+  </script>
+</body>
+</html>
